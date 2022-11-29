@@ -33,7 +33,329 @@ $line-card-iconbox-bg__color: #FCB72B;
 $line-card-line-color: #E5ECF4;
 $mirror-card-btn-bg__color: $main-btn-bg__color;
 $sign-up-bg__color: #495567;
+$footer-bg__color: #333A44;
 $footer-logo__color: #FFFFFF;
 $footer-social-icon__color: #FCB72B;
 
 // COLORS-END
+
+// TEMPLATES
+
+%fontLexend {
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.element-swap {
+    order: 2;
+}
+
+.btn {
+    padding: 15px 40px;
+    @include font(15, 700, 25, none, $main-btn-font__color);
+    background-color: $main-btn-bg__color;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.title {
+    @include font(48, 700, 48, none, $main-card-title-font__color);
+}
+
+.subtitle {
+    @include font(15, 400, 25, none, $main-card-subtitle-font__color);
+}
+
+// TEMPLATES END
+
+
+// MAIN CLASS
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    z-index: 9999999;
+
+    .header-content {
+        padding: 20px 0;
+        @include flex(center, space-between);
+
+        &__leftside {
+            @include flex(center, $cGap: 60);
+
+            &__logo-link {
+                & svg path {
+                    fill: $header-logo__color;
+                }
+            }
+
+            &__navbar {
+                &__link-list {
+                    @include flex(center, $cGap: 30);
+
+                    &__item {
+                        &-link {
+                            @include font(15, 700, 25, none, $header-nav-link__color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+
+    & .main-page {
+        &__overlay {
+            background-color: rgba(47, 59, 89, .7);
+        }
+
+        background: url(../assets/images/hero-bg.jpg) no-repeat;
+        background-position: center -830px;
+        overflow-x: hidden;
+        position: relative;
+        z-index: 555;
+
+        &__content {
+            padding-top: 235px;
+            padding-bottom: 150px;
+
+            &-block {
+                position: relative;
+
+                & .yellow1,
+                & .yellow2 {
+                    position: absolute;
+                }
+
+                & .yellow1 {
+                    top: 195px;
+                    left: -170px;
+                }
+
+                & .yellow2 {
+                    bottom: 5px;
+                    right: 90px;
+                }
+            }
+
+            &__title {
+                max-width: 520px;
+                @include font(56, 700, 56, none, $main-title-font__color);
+                color: $main-page-title-font__color;
+                margin-bottom: 40px;
+            }
+
+            &__subtitle {
+                max-width: 515px;
+                @extend %fontLexend;
+                @include font(15, 400, 25, none, $main-subtitle-font__color);
+                color: $main-page-subtitle-font__color;
+                padding-left: 110px;
+                margin-bottom: 40px;
+            }
+
+            &__btn {
+                margin-left: 110px;
+            }
+        }
+    }
+
+    & .line-card {
+        &__content {
+            padding-top: 160px;
+            padding-bottom: 200px;
+            position: relative;
+            @include flex($jContent: space-between);
+
+            & .line {
+                position: absolute;
+                width: 975px;
+                height: 10px;
+                background-color: $line-card-line-color;
+                top: 205px;
+                left: -215px;
+                z-index: -1;
+            }
+
+            &__card {
+                width: 350px;
+                min-height: 290px;
+
+                &-iconbox {
+                    width: 95px;
+                    height: 95px;
+                    border-radius: 50%;
+                    margin-bottom: 40px;
+                    @include flex(center, center);
+                    background-color: $line-card-iconbox-bg__color;
+
+                    & svg path {
+                        fill: $line-card-icon__color;
+                    }
+                }
+
+                &-title {
+                    @include font(24, 700, 28, none, $line-card-title-font__color);
+                    margin-bottom: 25px;
+                }
+
+                &__subtitle {
+                    @extend %fontLexend;
+                    color: $line-card-subtitle-font__color;
+                }
+            }
+        }
+    }
+
+    & .mirror-cards {
+        overflow-x: hidden;
+
+        &__content {
+            padding-bottom: 330px;
+
+            &-list {
+                @include flex($fDirection: column, $rGap: 155);
+
+                &__item {
+                    @include flex($jContent: space-between);
+                    position: relative;
+
+                    &__content {
+                        max-width: 480px;
+
+                        &-title {
+                            color: $mirror-card-title-font__color;
+                            margin-bottom: 25px;
+                        }
+
+                        &-subtitle {
+                            color: $mirror-card-subtitle-font__color;
+                            margin-bottom: 40px;
+                            text-align: justify;
+                        }
+                    }
+
+                    &__imgbox {
+                        position: relative;
+
+                        &-img {
+                            width: 445px;
+                            height: 445px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                & img[alt*="circle"] {
+                    position: absolute;
+                    right: -480px;
+                    top: 0;
+                    z-index: -1;
+                }
+
+                &__item:nth-child(even) {
+                    transform: rotateY(180deg);
+                    flex-direction: row-reverse;
+
+                    & .mirror-cards__content-list__item__content {
+                        transform: rotateY(180deg);
+                    }
+
+                    & .mirror-cards__content-list__item__imgbox {
+                        transform: rotateY(180deg);
+                    }
+
+
+                    & img[alt="arrow"] {
+                        position: absolute;
+                        top: 20px;
+                        left: -170px;
+                        z-index: 999999;
+                    }
+                }
+
+                &__item:nth-child(1) {
+                    & img[alt="arrow"] {
+                        position: absolute;
+                        top: 310px;
+                        left: -130px;
+                        z-index: 999999;
+                    }
+                }
+
+                &__item:nth-child(3) {
+                    & img[alt="arrow"] {
+                        position: absolute;
+                        top: 90px;
+                        right: -170px;
+                        z-index: 999999;
+                    }
+                }
+            }
+        }
+    }
+
+    & .signup {
+        background: $sign-up-bg__color;
+        overflow: hidden;
+
+        &-content {
+            position: relative;
+            padding: 100px 0;
+            @include flex(center, space-between);
+
+            &__title {
+                max-width: 445px;
+                color: #FFFFFF;
+            }
+
+            &__app-block {
+                @include flex(center, $cGap: 20)
+            }
+
+            & img[alt="circles"] {
+                position: absolute;
+                bottom: -160px;
+                right: -180px;
+            }
+        }
+    }
+}
+
+footer {
+    background: $footer-bg__color;
+
+    & .footer-content {
+        padding: 35px 0;
+        @include flex(center, space-between);
+
+        &__leftside {
+            @include flex(center, $cGap: 60);
+
+            &__link-list {
+                @include flex(center, $cGap: 30);
+
+                &__item {
+                    &-link {
+                        @include font(15, 700, 25, none, $footer-links-font__color);
+                    }
+                }
+            }
+        }
+
+        &__social {
+            @include flex(center, $cGap: 25);
+
+            & a svg path {
+                fill: $footer-social-icon__color;
+            }
+        }
+    }
+}
