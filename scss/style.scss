@@ -1,2 +1,39 @@
 @import "nullstyle.scss";
 @import "fonts.scss";
+
+
+// COLORS:
+// ---font-colors---
+$header-nav-link__color: #939CAA;
+$main-btn-font__color: #FFFFFF;
+$header-btn-font__color: $main-btn-font__color;
+$main-title-font__color: #FFFFFF;
+$main-page-title-font__color: $main-title-font__color;
+$main-subtitle-font__color: #FFFFFF;
+$main-page-subtitle-font__color: $main-subtitle-font__color;
+$main-page-btn-font__color: $main-btn-font__color;
+$main-card-title-font__color: #495567;
+$main-card-subtitle-font__color: #939CAA;
+$line-card-title-font__color: $main-card-title-font__color;
+$line-card-subtitle-font__color: $main-card-subtitle-font__color;
+$mirror-card-title-font__color: $main-card-title-font__color;
+$mirror-card-subtitle-font__color: $main-card-subtitle-font__color;
+$mirror-card-btn-font__color: $main-btn-font__color;
+$sign-up-title-font__color: #FFFFFF;
+$footer-links-font__color: $header-nav-link__color;
+
+
+// ---element-colors---
+$header-logo__color: #495567;
+$main-btn-bg__color: #FCB72B;
+$header-btn-bg__color: $main-btn-bg__color;
+$main-page-btn-bg__color: $main-btn-bg__color;
+$line-card-icon__color: #000000;
+$line-card-iconbox-bg__color: #FCB72B;
+$line-card-line-color: #E5ECF4;
+$mirror-card-btn-bg__color: $main-btn-bg__color;
+$sign-up-bg__color: #495567;
+$footer-logo__color: #FFFFFF;
+$footer-social-icon__color: #FCB72B;
+
+// COLORS-END
